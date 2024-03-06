@@ -37,12 +37,22 @@ while True:
 
     if choice == '1':
         # https://www.w3schools.com/python/python_dictionaries_access.asp
+        pok_ind = int(input("Choose your pokemon by index"))
+        print(pokemons[pok_ind])
         pass
     elif choice == '2':
         # https://www.w3schools.com/python/python_lists_sort.asp
+        def sorting(pok_strong):
+            return int(pok_strong["total"])
+        pokemons.sort(key = sorting, reverse = True)
+        print(pokemons[0:10])
         pass
     elif choice == '3':
         # https://www.w3schools.com/python/python_lists_sort.asp
+        def sorting(pok_weak):
+            return int(pok_weak["total"])
+        pokemons.sort(key = sorting)
+        print(pokemons[0:10])
         pass
     elif choice == '4':
         # Battle
@@ -52,6 +62,9 @@ while True:
         # Player choosing by entering Pokemon index
         # Damage is calculated by: (attack of Pokemon 2) - (defense of Pokemon 1) + (random from 5 to 20), and vice-versa
         # Player reaching 0 health (total) - lost
+        comp_choice = random.choice(pokemons)
+
+
         pass
 
     elif choice == '5':
@@ -61,5 +74,3 @@ while True:
         print("Invalid choice, choose from 1 to 5")
 
     print("==========================")
-
-
